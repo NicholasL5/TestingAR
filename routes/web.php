@@ -14,13 +14,13 @@ use App\Http\Controllers\ThreejsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 Route::get('/test/{id}', function($id){
     return view('welcome', ['rid' => $id]);
 });
 
-Route::get('/threejs', [ThreejsController::class, 'show']);
+Route::get('/', [ThreejsController::class, 'show']);
