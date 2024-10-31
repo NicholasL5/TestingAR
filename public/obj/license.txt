@@ -1,0 +1,8 @@
+Model Information:
+* title:	Copper wire coil
+* source:	https://sketchfab.com/3d-models/copper-wire-coil-aa0675b01e7447ffa5402aebc8f08c36
+* author:	famousandfaded (https://sketchfab.com/famousandfaded)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
