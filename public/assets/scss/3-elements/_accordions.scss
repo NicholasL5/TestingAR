@@ -1,0 +1,135 @@
+
+/*=============================================
+=            accordions            =
+=============================================*/
+
+
+.faq-wrapper {
+
+    .panel.panel-default {
+        border: 1px solid #ebebeb;
+        margin-bottom: 20px;
+    }
+    
+    .card, .card-header{
+        border-radius: 0;
+        
+    }
+
+    .card{
+
+        border-bottom: none;
+
+        &:last-child{
+            margin-bottom: 0; 
+            border-bottom: 1px solid rgba(0,0,0,.125);
+        }
+    }
+
+    .card-header{
+        padding: 0;
+        border-bottom: 0;
+        background-color: $white;
+
+        h5{
+            button{
+                width: 100%;
+                text-align: left;
+                color: $theme-color--black3;
+                padding: 20px 35px;
+                position: relative;
+                overflow-wrap: break-word;
+                white-space: normal;
+                @include font-size(18px);
+                line-height: 1.2;
+                font-weight: 700;
+
+                @media #{$extra-small-mobile}{
+                    padding-left: 15px;
+                    padding-right: 20px;
+                }
+
+                span{
+                    position: absolute;
+                    right: 35px;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    @media #{$extra-small-mobile}{
+                        right: 15px;
+                    }
+                    i{
+                        font-size: 12px;
+                        visibility: hidden;
+                        opacity: 0;
+                        display: none;
+                    }
+                }
+                &:hover, &:focus{
+                    text-decoration: none;
+                }
+
+                &[aria-expanded="true"]{
+                    background-color: #f7f7f7;
+                    border-radius: 0;
+                    span{
+                        i{
+                            &:nth-child(2){
+                                visibility: visible;
+                                opacity: 1;
+                                display: inline;
+                            }
+                        }
+                    }
+
+                    &:before{
+                        height: 100%;
+                    }
+
+
+                }
+
+                &[aria-expanded="false"]{
+                    span{
+                        i{
+                            &:nth-child(1){
+                                visibility: visible;
+                                opacity: 1;
+                                display: inline;
+                            }
+                        }
+                    }
+                }
+
+                &:before{
+                    content: '';
+                    width: 3px;
+                    height: 0;
+                    background-color: $theme-color--default;
+                    position: absolute;
+                    top: 0;
+                    left: -1px;
+                    transition: $transition--cubic;
+                }
+
+                &:hover{
+                    &:before{
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .card-body{
+        p{
+            font-size: 14px;
+            line-height: 24px; 
+        }
+    }
+
+}
+
+
+/*=====  End of accordions  ======*/
+

@@ -1,0 +1,85 @@
+
+/*=============================================
+=            brand logo slider            =
+=============================================*/
+
+.brand-logo-slider{
+    &__container-area{
+        margin: -20px;
+        @media #{$laptop-device}{
+            margin: -15px;
+        }
+        @media #{$small-mobile}{
+            margin: -15px;
+        }
+    }
+    &__container{
+        padding: 20px;
+        @media #{$laptop-device}{
+            padding: 15px;
+        }
+        @media #{$small-mobile}{
+            padding: 15px;
+        }
+    }
+
+    &__single{
+        align-self: center;
+        text-align: center;
+        position: relative;
+        .image{
+            transition: all .4s linear;
+        }
+        .image-hover{
+            visibility: hidden;
+            opacity: 0;
+            transform: translate(-50%, 20px);
+            transition: all .4s linear;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100%;
+        }
+
+        &:hover{
+            .image{
+                visibility: hidden;
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            .image-hover{
+                
+                visibility: visible;
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+        }
+    }
+}
+
+
+
+.brand-logo-grid{
+    
+    &__single{
+        border: 1px solid #eee;
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 30px;
+        min-height: 140px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: $transition--cubic;
+
+        &:hover{
+            border-color: transparent;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,.05);
+        }
+    }
+}
+
+
+/*=====  End of brand logo slider  ======*/
+

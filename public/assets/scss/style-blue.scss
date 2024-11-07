@@ -1,0 +1,92 @@
+
+/*=============================================
+=            CSS Index            =
+=============================================
+
+    -> Default styles
+    -> Helper CSS
+    -> Spacing
+    -> Header
+    -> Footer
+    -> Sidebar
+    -> Container
+    -> Button
+    -> Search overlay
+    -> Section title
+    -> Backgrounds
+    -> Accordions
+    -> Preloader
+    -> Scroll top
+    -> Featured project
+    -> Industry slider
+    -> Testimonial slider
+    -> Brand logo slider
+    -> Project counter
+    -> Blog newsletter
+    -> Support footer
+    -> CTA area 
+    -> Career
+    -> Icon info
+    -> Banner
+    -> Partner career
+    -> Industry grid
+    -> Feature background
+    -> About counter
+    -> Project grid post
+    -> Social element
+    -> Contact form
+    -> Industry icon
+    -> Project filter
+    -> Quote background
+    -> Industry flip
+    -> Industry tab
+
+
+
+/*=====  End of CSS Index  ======*/
+
+
+    @import '0-base/variables';
+    @import '0-base/rfs';
+    @import '0-base/mixins';
+    @import '0-base/helper';
+
+    $theme-color--default: #0C95EC;
+    $theme-color--default--dark: rgb(6, 121, 192);;
+
+    @import '1-global/default';
+    @import '1-global/spacing';
+    @import '2-layout/header';
+    @import '2-layout/footer';
+    @import '2-layout/sidebar';
+    @import '2-layout/container'; 
+    @import '3-elements/button';
+    @import '3-elements/search-overlay';
+    @import '3-elements/section-title';
+    @import '3-elements/backgrounds';
+    @import '3-elements/accordions';
+    @import '3-elements/preloader';
+    @import '3-elements/scroll-top';
+    @import '4-sections/featured-project';
+    @import '4-sections/industry-slider';
+    @import '4-sections/testimonial-slider';
+    @import '4-sections/brand-logo';
+    @import '4-sections/project-counter';
+    @import '4-sections/blog-newsletter';
+    @import '4-sections/support-footer';
+    @import '4-sections/cta';
+    @import '4-sections/career';
+    @import '4-sections/icon-info';
+    @import '4-sections/banner';
+    @import '4-sections/partner-career';
+    @import '4-sections/industry-grid';
+    @import '4-sections/feature-background';
+    @import '4-sections/about-counter';
+    @import '4-sections/project-grid-post';
+    @import '4-sections/social-element';
+    @import '4-sections/contact-form';
+    @import '4-sections/industry-icon';
+    @import '4-sections/project-filter';
+    @import '4-sections/quote-background';
+    @import '4-sections/industry-flip';
+    @import '4-sections/industry-tab';

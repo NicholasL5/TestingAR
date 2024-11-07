@@ -1,0 +1,242 @@
+
+/*=============================================
+=            banner            =
+=============================================*/
+
+.banner-video-area{
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    @media #{$tablet-device, $large-mobile}{
+        background-image: none !important;
+    }
+
+    &__image{
+       
+        @media #{$large-mobile}{
+            margin-bottom: 40px;
+        }
+    }
+
+    &__content{
+        .section-title-area{
+            .title{
+                @media #{$tablet-device, $large-mobile}{
+                    margin-top: -5px;
+                }
+            }
+
+            // .section-title-content--style2{
+            //     color: #111;
+            // }
+        }
+    }
+}
+
+.banner-image{
+    img{
+        width: 100%;
+    }
+}
+
+.banner-image-content{
+    padding: 30px 80px;
+
+    @media #{$desktop-device, $tablet-device, $large-mobile}{
+        padding: 80px 30px;
+    }
+
+    @media #{$small-mobile}{
+        padding: 50px 15px;
+    }
+    &__title{
+        @include font-size(50px);
+        line-height: 1.2;
+        font-weight: 400;
+        color: #06112c;
+        margin-bottom: 30px;
+        .highlight{
+            font-weight: 700;
+            display: block;
+        }
+    }
+
+    &__text{
+        @include font-size(18px);
+        line-height: 1.4;
+        margin-bottom: 30px;
+    }
+
+    &__btn{
+        border: 2px solid #ddd;
+        height: 50px;
+        letter-spacing: .5px;
+        padding: 0 25px;
+        line-height: 46px;
+        @include font-size(13px);
+        font-weight: 700;
+        color: $theme-color--black;
+
+        &:hover{
+            background-color: $theme-color--default;
+            border-color: $theme-color--default;
+            color: $theme-color--black;
+        }
+    }
+}
+
+.banner-image-two{
+    padding: 140px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+
+    @media #{$tablet-device, $large-mobile}{
+        padding: 100px 0;
+    }
+    &__content{
+        width: 660px;
+        max-width: 100%;
+        padding-left: 45px;
+        padding-right: 45px;
+        margin: 0 auto;
+
+        @media #{$large-mobile}{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+
+    &__subtitle{
+        letter-spacing: 2px;
+        @include font-size(14px);
+        line-height: 1.1;
+        color: $theme-color--default;
+        margin-bottom: 15px;
+    }
+
+    &__title{
+        @include font-size(50px);
+        line-height: 1.3;
+        color: $white;
+        font-weight: 300;
+        margin-bottom: 30px;
+
+        @media #{$tablet-device}{
+            @include font-size(25px);
+        }
+        .highlight{
+            font-weight: 700;
+            display: block;
+        }
+    }
+    
+    &__text{
+        @include font-size(15px);
+        color: $white;
+        font-weight: 400;
+        max-width: 450px;
+        margin-bottom: 40px;
+    }
+
+    .ht-btn{
+        color: $theme-color--black;
+    }
+}
+
+.banner-image-three-area{
+    background-repeat: no-repeat;
+    background-position: right 50px;
+}
+
+.banner-image-three{
+    &__left{
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+    &__content{
+        max-width: 450px;
+        @media #{$tablet-device}{
+            padding-top: 80px;
+        }
+        @media #{$large-mobile}{
+            padding-top: 60px;
+        }
+        .subtitle{
+            @include font-size(14px);
+            line-height: 1.2;
+            font-weight: 700;
+            color: #888;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+        .title{
+            @include font-size(50px);
+            line-height: 1.2;
+            font-weight: 300;
+            margin-bottom: 50px;
+            .highlight{
+                color: $theme-color--default;
+                font-weight: 700;
+            }
+        }
+        .subtitle-big{
+            @include font-size(20px);
+            line-height: 1.3;
+            font-weight: 400;
+            color: $theme-color--black;
+            margin-bottom: 20px;
+        }
+        .text{
+            margin-bottom: 40px;
+        }
+    }
+
+    &__image{
+        padding: 120px 30px;
+        @media #{$tablet-device}{
+            padding-top: 80px;
+            padding-bottom: 80px;
+            border-left: 1px solid #eee;
+        }
+        @media #{$large-mobile}{
+            padding-top: 60px;
+            padding-bottom: 60px;
+            border-left: 1px solid #eee;
+        }
+
+        @media #{$small-mobile}{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .banner-image{
+            position: relative;
+        }
+        .banner-sign{
+            position: absolute;
+            bottom: -40px;
+            right: -80px;
+
+            @media #{$laptop-device, $desktop-device}{
+                right: 30px;
+            }
+            @media #{$tablet-device}{
+                right: 30px;
+                bottom: 30px;
+            }
+            @media #{$large-mobile}{
+                right: 30px;
+                bottom: 30px;
+            }
+
+            @media #{$small-mobile}{
+                right: 15px;
+                bottom: 15px;
+            }
+        }
+    }
+}
+
+/*=====  End of banner  ======*/
+

@@ -1,0 +1,115 @@
+
+/*=============================================
+=            breadcrumb            =
+=============================================*/
+
+.breadcrumb-area-bg{
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+    &:after{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $black;
+        opacity: 0.3;
+        z-index: -1;
+        content: "";
+    }
+}
+
+
+.breadcrumb-page-title{
+    @include font-size(40px);
+    font-weight: 700;
+    color: $white;
+    margin-bottom: 0;
+
+    &--style2{
+        margin-bottom: 100px;
+        @media #{$tablet-device}{
+            margin-bottom: 50px;
+        }
+        @media #{$large-mobile}{
+            margin-bottom: 30px;
+        }
+        @media #{$extra-small-mobile}{
+            margin-bottom: 15px;
+            @include font-size(35px);
+        }
+    }
+}
+
+.breadcrumb-page-list{
+    text-align: right;
+    @media #{$small-mobile}{
+        text-align: left;
+        margin-top: 10px;
+    }
+    li{
+        display: inline-block;
+        color: $white;
+        @include font-size(13px);
+        line-height: 1.2;
+        font-weight: 700;
+        
+            &.has-children{
+                
+                position: relative;
+                padding-right: 25px;
+
+                a{
+                    color: $white;
+                    position: relative;
+                    letter-spacing: 0.5px;
+                    padding: 2px 0;
+                    &:after{
+                        transition: .6s cubic-bezier(.25,.8,.25,1) 0s;
+                        content: '';
+                        width: 0;
+                        height: 1px;
+                        bottom: 0;
+                        position: absolute;
+                        left: auto;
+                        right: 0;
+                        z-index: 1;
+                        background-color: transparent;
+                    }
+                }
+
+                &:before{
+                    font-family: Ionicons;
+                    content: '\f125';
+                    font-size: 8px;
+                    font-weight: 500;
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translate(0,-50%);
+                }
+
+                &:hover{
+                    a{
+                        &:after{
+                            background-color: $white;
+                            width: 100%;
+                            left: 0;
+                            right: auto;
+                        }
+                    }
+                }
+            }
+        }
+
+        &--style2{
+            text-align: left;
+        }
+
+    }
+
+
+/*=====  End of breadcrumb  ======*/
+

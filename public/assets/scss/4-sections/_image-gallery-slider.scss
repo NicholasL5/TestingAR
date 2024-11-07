@@ -1,0 +1,53 @@
+
+/*=============================================
+=            image gallery slider            =
+=============================================*/
+
+.image-gallery-slider-big{
+    &__container-area{
+        position: relative;
+        .ht-swiper-button{
+            &-nav{
+                background-color: $white;
+                border-color: $white;
+
+                &:hover{
+                    background-color: $theme-color--default;
+                    border-color: $theme-color--default;
+                    color: $white;
+                }
+            }
+            &-prev{
+                left: 30px;;
+            }
+            &-next{
+                right: 30px;
+            }
+        }
+    }
+}
+
+.image-gallery-slider-small{
+    &__single-slide{
+        opacity: 0.5;
+        transition: $transition--cubic;
+        cursor: pointer;
+
+        &:hover{
+            opacity: 1;
+        }
+    }
+
+    &__wrapper{
+
+        .swiper-slide-active{
+            .image-gallery-slider-small__single-slide{
+                opacity: 1;
+            }
+        }
+    }
+
+}
+
+/*=====  End of image gallery slider  ======*/
+

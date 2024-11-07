@@ -1,0 +1,194 @@
+
+/*=============================================
+=            career section            =
+=============================================*/
+
+.career-banner{
+    &__image{
+        img{
+            width: 100%;
+        }
+    }
+    &__content{
+        height: 100%;
+        padding: 50px 40px;
+        background-color: $theme-color--default;
+
+        .subtitle{
+            @include font-size(14px);
+            line-height: 1.3;
+            color: rgba(34,34,34,0.5);
+            margin-bottom: 40px;
+            @media #{$desktop-device}{
+                margin-bottom: 20px;
+            }
+            @media #{$tablet-device}{
+                margin-bottom: 20px;
+            }
+            @media #{$large-mobile}{
+                margin-bottom: 20px;
+            }
+        }
+
+        .title{
+            @include font-size(40px);
+            margin-bottom: 80px;
+            @media #{$desktop-device}{
+                margin-bottom: 40px;
+            }
+            @media #{$tablet-device}{
+                margin-bottom: 40px;
+            }
+            @media #{$large-mobile}{
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    .col-lg-8{
+        @media #{$desktop-device}{
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+    .col-lg-4{
+        @media #{$desktop-device}{
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+
+.job-list{
+    &__wrapper{
+        @media #{$tablet-device}{
+            margin-top: 30px;
+        }
+        @media #{$large-mobile}{
+            margin-top: 30px;
+        }
+        padding: 40px;
+        @media #{$extra-small-mobile}{
+            padding: 40px 20px;
+        }
+    }
+
+    &__title-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media #{$extra-small-mobile}{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .title{
+            @include font-size(34px);
+            line-height: 1.5;
+        }
+
+        .link{
+            @include font-size(13px);
+            font-weight: 700;
+            line-height: 40px;
+            color: $theme-color--black;
+            a{
+                i{
+                    content: '\f2c7';
+                    font-family: Ionicons;
+                    font-size: 14px;
+                    font-weight: 400;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-left: 15px;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 38px;
+                    text-align: center;
+                    border: 1px solid #ddd;
+                    border-radius: 50%;
+                    
+                }
+
+                &:hover{
+                    color: $theme-color--default;
+                    i{
+                        background-color: $theme-color--default;
+                        color: $white;
+                        border-color: $theme-color--default;
+                    }
+                }
+            }
+        }
+    }
+
+    &__single-wrapper{
+        margin-top: 20px;
+    }
+
+    &__single{
+        display: block;
+        padding: 20px 0;
+        border-bottom: 1px solid #ddd;
+
+        &:hover{
+            .title{
+                color: $theme-color--default;
+            }
+        }
+
+        .title{
+            @include font-size(20px);
+            transition: $transition--cubic;
+        }
+
+        .text{
+            color: $body-text-color;
+        }
+        &:first-child{
+            padding-top: 0;
+        }
+
+        &:last-child{
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+}
+
+
+.career-background{
+    
+    &__area-bg{
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &__content{
+        background: $theme-color--default;
+        padding: 80px 50px 60px 50px;
+        color: $white;
+
+        @media #{$extra-small-mobile}{
+            padding: 50px 30px;
+        }
+        .title{
+            color: $white;
+            @include font-size(44px);
+            line-height: 1.2;
+            font-weight: 300;
+            margin-bottom: 20px;
+            .highlight{
+                font-weight: 700;
+            }
+        }
+        .text{
+            margin-bottom: 30px;
+        }
+    }
+}
+
+/*=====  End of career section  ======*/
+

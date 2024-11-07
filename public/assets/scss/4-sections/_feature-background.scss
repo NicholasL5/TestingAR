@@ -1,0 +1,216 @@
+
+/*=============================================
+=            feature backgroun            =
+=============================================*/
+
+.feature-background{
+
+    &__wrapper{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+    }
+    
+    &__image{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        min-height: 300px;
+        height: 100%;
+
+        &--style2{
+            min-height: 600px;
+
+            @media #{$tablet-device, $large-mobile}{
+                min-height: 400px;
+            }
+
+            @media #{$small-mobile}{
+                min-height: 250px;
+            }
+        }
+    }
+    &__content{
+        width: 600px;
+        max-width: 100%;
+        padding: 50px 0;
+        padding-left: 120px;
+        @media #{$laptop-device}{
+            padding-left: 30px;
+        }
+        @media #{$desktop-device}{
+            max-width: 480px;
+            width: 100%;
+            padding-left: 30px;
+        }
+        @media #{$tablet-device}{
+            max-width: 360px;
+            width: 100%;
+            padding-left: 30px;
+        }
+
+        @media #{$large-mobile}{
+            max-width: 540px;
+            margin: 0 auto;
+            width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 0;
+        }
+
+        @media #{$small-mobile}{
+            width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        &--style2{
+            @media #{$large-mobile}{
+                margin-bottom: 60px;
+            }
+        }
+
+        &--style3{
+            padding-top: 135px;
+            padding-bottom: 135px;
+            float: right;
+            width: 460px;
+            max-width: 100%;
+            padding-left: 0;
+
+            .title{
+                color: $theme-color--black3;
+            }
+
+            @media #{$laptop-device}{
+                float: right;
+                padding-left: 15px;
+                padding-right: 15px;
+                width: 500px;
+            }
+
+            @media #{$desktop-device}{
+                padding-left: 20px;
+                float: none;
+            }
+
+            @media #{$tablet-device}{
+                padding-top: 100px;
+                padding-bottom: 100px;
+                padding-left: 40px;
+                float: none;
+            }
+
+            @media #{$large-mobile}{
+                padding-top: 100px;
+                padding-bottom: 100px;
+                padding-left: 40px;
+                float: none;
+                width: 430px;
+                padding-left: 0;
+            }
+
+            @media #{$small-mobile}{
+                padding-left: 60px;
+            }
+
+            @media #{$extra-small-mobile}{
+                padding-top: 50px;
+                padding-bottom: 50px;
+                padding-left: 15px;  
+            }
+        }
+
+        &--style2{
+            padding-top: 120px;
+            padding-bottom: 120px;
+
+            @media #{$large-mobile}{
+                padding-top: 60px;
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    &__content-area{
+        padding-left: 200px;
+
+        @media #{$laptop-device,  $desktop-device, $tablet-device, $large-mobile}{
+            padding-left: 0;
+        }
+
+        &--style2{
+            padding-left: 100px;
+        }
+    }
+
+    &__content-wrapper{
+        width: 670px;
+        max-width: 100%;
+
+        @media #{$laptop-device, $tablet-device}{
+            width: 100%;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+
+        @media #{$desktop-device}{
+            width: 100%;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        @media #{$large-mobile}{
+            width: 100%;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        @media #{$small-mobile}{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
+    &__single-content-wrapper{
+        .ht-btn{
+            margin-top: 30px;
+        }
+    }
+
+    &__single-content{
+        margin-bottom: 30px;
+        .title{
+            @include font-size(20px);
+            font-weight: 700;
+            color: $theme-color--default;
+            margin-bottom: 25px;
+        }
+    }
+}
+
+.feature-list{
+    li{
+        @include font-size(15px);
+        position: relative;
+        margin-bottom: 25px;
+        padding-left: 30px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        &:before{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            display: block;
+            font-family: Ionicons;
+            content: '\f122';
+            @include font-size(12px);
+            color: $theme-color--default;
+        }
+    }
+}
+
+/*=====  End of feature background  ======*/
+

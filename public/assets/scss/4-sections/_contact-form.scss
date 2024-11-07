@@ -1,0 +1,286 @@
+
+/*=============================================
+=            contact form            =
+=============================================*/
+.contact-icon-info-wrapper{
+    margin-bottom: 30px;
+
+    &--style2{
+        margin-bottom: 0;
+
+        @media #{$large-mobile}{
+            margin-bottom: 50px;
+        }
+    }
+}
+
+.single-contact-icon-info{
+    display: flex;
+    margin-bottom: 30px;
+    &__image{
+        margin-right: 15px;
+        color: $theme-color--default;
+        align-self: flex-start;
+        i{
+            @include font-size(28px);
+            line-height: 1;
+        }
+    }
+    &__content{
+        .title{
+            @include font-size(14px);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+    }
+
+    &--style2{
+        margin-bottom: 0;
+        padding: 43px 38px;
+        background-color: #f7f7f7;
+        border-bottom: 1px solid #ddd;
+
+        @media #{$tablet-device}{
+            padding: 40px 20px;
+        }
+
+        .single-contact-icon-info__image{
+            margin-right: 30px;
+            @media #{$tablet-device}{
+                margin-right: 15px;
+            }
+            i{
+                font-size: 50px;
+            }
+        }
+
+        &:last-child{
+            border-bottom: 0;
+        }
+    }
+}
+
+
+.contact-form-wrapper{
+    margin-bottom: -15px;
+    input{
+        width: 100%;
+        outline: none;
+        border: 0;
+        border-bottom: 2px solid #ddd;
+        color: #222;
+        font-weight: 400;
+        padding: 12px 0 12px;
+        height: 50px;
+        margin-bottom: 20px;
+        transition: $transition--cubic;
+        &:focus{
+            border-color: $theme-color--default;
+        }
+    }
+
+    input:focus::-webkit-input-placeholder { color:transparent; }
+    input:focus:-moz-placeholder { color:transparent;} /* FF 4-18 */
+    input:focus::-moz-placeholder { color:transparent;} /* FF 19+ */
+    input:focus:-ms-input-placeholder { color:transparent;} /* IE 10+ */
+
+    textarea{
+        width: 100%;
+        outline: none;
+        border: 0;
+        border-bottom: 2px solid #ddd;
+        font-weight: 400;
+        color: #222;
+        display: block;
+        padding: 12px 0 3px;
+        max-width: 100%;
+        margin-bottom: 30px;
+        height: 150px;
+        transition: $transition--cubic;
+        &:focus{
+            border-color: $theme-color--default;
+        }
+    }
+    textarea:focus::-webkit-input-placeholder { color:transparent; }
+    textarea:focus:-moz-placeholder { color:transparent;} /* FF 4-18 */
+    textarea:focus::-moz-placeholder { color:transparent;} /* FF 19+ */
+    textarea:focus:-ms-input-placeholder { color:transparent;} /* IE 10+ */
+
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #888;
+        opacity: 1; /* Firefox */
+      }
+      
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: #888;
+      }
+      
+      ::-ms-input-placeholder { /* Microsoft Edge */
+        color: #888;
+      }
+
+      .form-message{
+            margin-top: 15px;
+        }
+
+    &--style2{
+        border: 1px solid #eee;
+        background-color: #f7f7f7;
+        padding: 40px 30px 50px;
+        @media #{$tablet-device, $large-mobile}{
+            margin-bottom: 40px;
+        }
+
+        @media #{$extra-small-mobile}{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        input, textarea{
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 0 15px;
+
+            &:focus{
+                border-color: #ddd;
+            }
+        }
+        textarea{
+            padding: 10px 15px;
+        }
+    }
+}
+
+
+
+/* contact location grid */
+
+.contact-location-grid{
+    &__wrapper{
+        margin-bottom: -30px;
+    }
+
+    &__single{
+        margin-bottom: 30px;
+    }   
+
+    &__image{
+        margin-bottom: 30px;
+        img{
+            width: 100%;
+        }
+    }
+
+    &__content{
+        .title{
+            margin-top: -5px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .info-list{
+            margin-bottom: 35px;
+            li{
+                padding: 5px 0;
+                padding-left: 40px;
+                position: relative;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+
+                &:before{
+                    font-size: 18px;
+                    font-family: Ionicons;
+                    display: block;
+                    position: absolute;
+                    top: 5px;
+                    left: 0;
+                    color: $theme-color--default;
+                }
+
+                &.address{
+                    &:before{
+                        content: '\f203';
+                    }
+                }
+
+                &.email{
+                    &:before{
+                        content: '\f132';
+                    }
+                }
+
+                &.phone{
+                    &:before{
+                        content: '\f2d2';
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* contact social link list */
+
+.contact-social-link-list-wrapper{
+    @media #{$tablet-device}{
+        margin-top: 50px;
+    }
+    @media #{$large-mobile}{
+        margin-top: 40px;
+    }
+}
+
+.contact-social-link-list{
+
+    margin-bottom: -10px;
+    display: block;
+    overflow: hidden;
+    li{
+        display: block;
+        float: left;
+        width: 50%;
+        padding-right: 20px;
+        @media #{$desktop-device}{
+            float: none;
+            width: 100%;
+        }
+        @media #{$extra-small-mobile}{
+            float: none;
+            width: 100%;
+        }
+        a{
+            display: inline-block;
+            padding: 10px 0;
+            color: #888;
+            .link-icon{  
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                line-height: 48px;
+                text-align: center;
+                border: 1px solid #ddd;
+                border-radius: 50%;
+                font-size: 20px;
+                margin-right: 20px;
+                color: #222;
+                transition: $transition--cubic;
+            }
+
+            .link-text{
+                font-size: 18px;
+            }
+
+            &:hover{
+                .link-icon{
+                    background-color: $theme-color--default;
+                    color: $white;
+                    border-color: $theme-color--default;
+                }
+            }
+        }
+    }
+}
+
+/*=====  End of contact form  ======*/

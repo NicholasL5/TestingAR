@@ -1,0 +1,270 @@
+
+/*=============================================
+=            industry grid            =
+=============================================*/
+
+.industry-grid-wrapper{
+    margin-bottom: -60px;
+    @media #{$tablet-device, $large-mobile}{
+        margin-bottom: -40px;
+    }
+
+    &--laptop-width{
+        .col-xl-4{
+            @media #{$laptop-device}{
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+    }
+}
+
+.single-industry-grid{
+    //padding: 0 35px;
+
+    @media #{$laptop-device, $desktop-device, $tablet-device, $large-mobile}{
+        padding: 0;
+    }
+    &__heading{
+        display: flex;
+        margin-bottom: 25px;
+        .icon{
+            @include font-size(50px);
+            margin-right: 20px;
+            line-height: 1;
+            color: $theme-color--black;
+            transition: $transition--cubic;
+        }
+        .title{
+            @include font-size(20px);
+            a{
+                color: $theme-color--black;
+                transition: $transition--cubic;
+                &:hover{
+                    color: $theme-color--default;
+                }
+            }
+        }
+
+        &:hover{
+            .icon{
+                color: $theme-color--default;
+            }
+        }
+    }
+}
+
+
+.single-industry-grid-two{
+    display: flex;
+    position: relative;
+    box-shadow: 0 0 40px rgba(0,0,0,.11);
+
+    @media #{$tablet-device, $large-mobile}{
+        flex-direction: column;
+    }
+    &__image{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: left center;
+        min-height: 400px;
+        flex-basis: 50%;
+
+        @media #{$extra-small-mobile}{
+            min-height: 300px;
+        }
+    }
+    &__content{
+        flex-basis: 50%;
+        padding: 100px 30px;
+        position: relative;
+
+        @media #{$tablet-device, $large-mobile}{
+            padding-top: 50px;
+        }
+        
+        .content-wrapper{
+            margin: 0 auto;
+            max-width: 530px;
+            @media #{$tablet-device, $large-mobile}{
+                max-width: 100%;
+            }
+        }
+
+
+        @media #{$small-mobile}{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .title{
+            @include font-size(40px);
+            font-weight: 300;
+            margin-bottom: 40px;
+            line-height: 1.3;
+            display: flex;
+            align-items: center;
+
+            a{
+                color: $theme-color--black;
+            }
+
+            .highlight{
+                font-weight: 700;
+                display: block;
+            }
+
+            i{
+                @include font-size(80px);
+                line-height: 1;
+                margin-right: 40px;
+                color: $theme-color--default;
+
+                @media #{$small-mobile}{
+                    font-size: 60px;
+                    margin-right: 15px;
+                }
+            }
+        }
+
+    }
+    .post-readmore-btn{
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        width: 60px;
+        height: 100%;
+        background-color: $theme-color--default;
+        line-height: 60px;
+        color: $theme-color--black;
+        font-weight: 700;
+        @include font-size(13px);
+
+        @media #{$desktop-device, $tablet-device, $large-mobile}{
+            position: absolute;
+            bottom: 0;
+            top: auto;
+            left: 0;
+            width: 100%;
+            height: 60px;
+        }
+        
+
+        span{
+            display: block;
+            transform: rotate(90deg);
+            transform-origin: left bottom;
+            white-space: nowrap;
+            position: relative;
+            z-index: 3;
+            transition: $transition--cubic;
+
+            @media #{$desktop-device, $tablet-device, $large-mobile}{
+                transform: none;
+                padding-left: 30px;
+            }
+
+            @media #{$small-mobile}{
+                padding-left: 15px;
+            }
+        }
+
+        i{
+            position: absolute;
+            top: auto;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) rotate(90deg);
+            @include font-size(20px);
+            transition: $transition--cubic;
+            z-index: 3;
+
+            @media #{$desktop-device, $tablet-device, $large-mobile}{
+                transform: none;
+                right: 30px;
+                left: auto;
+                top: 50%;
+                bottom: auto;
+                transform: translateY(-50%);
+            }
+
+            @media #{$small-mobile}{
+                right: 15px;
+            }
+        }
+
+        &:after{
+            width: 100%;
+            height: 0;
+            content: '';
+            background-color: $theme-color--black;
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            transition: $transition--cubic;
+
+            @media #{$desktop-device, $tablet-device, $large-mobile}{
+                width: 0;
+                height: 100%;
+                left: auto;
+                right: 0;
+            }
+        }
+
+        &:hover{
+            span{
+                color: $white;
+            }
+            i{
+                color: $white;
+            }
+            &:after{
+                height: 100%;
+                top: 0;
+                bottom: auto;
+
+                @media #{$desktop-device, $tablet-device, $large-mobile}{
+                    width: 100%;
+                    right: auto;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    &:nth-child(2n){
+        .single-industry-grid-two__image{
+            order: 2;
+            @media #{$tablet-device, $large-mobile}{
+                order: 1;
+            }
+        }
+        .single-industry-grid-two__content{
+            order: 1;
+            @media #{$tablet-device, $large-mobile}{
+                order: 2;
+            }
+        }
+    }
+
+    &:nth-child(3n+1){
+        background-color: $theme-color--black;
+        .single-industry-grid-two__content{
+            .title{
+                color: $white;
+                a{
+                    color: $white;
+                    &:hover{
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=====  End of industry grid  ======*/
+

@@ -1,0 +1,119 @@
+
+/*=============================================
+=            search overlay            =
+=============================================*/
+
+.search-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: all ease-in-out .25s;
+    background-color: rgba(0, 0, 0, .85);
+
+    &.active{
+        visibility: visible;
+        opacity: 1;
+
+        .page-popup-search-inner{
+            visibility: visible;
+            opacity: 1;
+            transform: translate(-50%,-50%) scale(1);
+        }
+
+        .search-field{
+            transform: scale3d(1,1,1);
+        }
+
+        .form-description{
+            opacity: 1;
+            transform: translate3d(0,0,0);
+        }
+    }
+
+    .popup-search-close{
+        position: absolute;
+        top: 10px;
+        right: 60px;
+        @include font-size(100px);
+        cursor: pointer;
+        line-height: 0;
+        color: $white;
+        transition: $transition--cubic;
+        &:hover{
+            color: $theme-color--default;
+        }
+
+        @media #{$tablet-device}{
+            right: 30px;
+        }
+
+        @media #{$large-mobile}{
+            right: 30px;
+        }
+    }
+
+    .page-popup-search-inner{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: inline-block;
+        visibility: hidden;
+        padding: 0 30px;
+        width: 75%;
+        text-align: center;
+        font-size: 18px;
+        opacity: 0;
+        transition: all ease-in-out .3s;
+        transform: translate(-50%,-50%) scale(.8);
+        line-height: 1;
+
+        @media #{$tablet-device}{
+            width: 100%;
+        }
+
+        @media #{$large-mobile}{
+            width: 100%;
+        }
+    }
+
+    .search-field{
+        padding: .05em 0;
+        height: auto;
+        border: 0;
+        border-bottom: 5px solid $theme-color--default;
+        background: none;
+        border-radius: 0;
+        font-size: 10vw;
+        transform: scale(0,1,1);
+        width: 100%;
+        color: $theme-color--default;
+        line-height: 1;
+        transition: $transition--cubic;
+    }
+
+    .form-description{
+        display: block;
+        padding: .85em 0;
+        text-align: right;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.5;
+        opacity: 0;
+        transform: translate3d(0,50px,0);
+        transition: opacity .4s,transform .4s;
+        color: $theme-color--default;
+        @media #{$extra-small-mobile}{
+            font-size: 15px;
+        }
+    }
+}
+
+
+/*=====  End of search overlay  ======*/
+

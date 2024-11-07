@@ -1,0 +1,257 @@
+
+/*=============================================
+=            project grid post            =
+=============================================*/
+
+.project-grid-post{
+    
+    &__wrapper{
+        @media #{$tablet-device}{
+            margin-bottom: -30px;
+        }
+    }
+    &__single{
+        margin-bottom: 30px;
+        &:hover{
+            .project-grid-post__image{
+                transform: translateY(-10px);
+            }
+        }
+    }
+
+    &__image{
+        margin-bottom: 30px;
+        transition: $transition--cubic;
+        img{
+            width: 100%;
+        }
+    }   
+
+    &__title{
+        margin-bottom: 20px;
+        @include font-size(20px);
+
+        &--black3{
+            color: $theme-color--black3;
+        }
+    }
+
+    &__text{
+        margin-bottom: 20px;
+    }
+
+    &__feature-list{
+        padding: 45px 50px;
+        border: 3px solid $theme-color--default;
+        width: 100%;
+
+
+        .title{
+            @include font-size(24px);
+            line-height: 1.2;
+            color: $theme-color--black3;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .features{
+            margin-bottom: 30px;
+            li{
+                color: $theme-color--black3;
+                position: relative;
+                padding-left: 30px;
+                margin-bottom: 15px;
+                &:before{
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0;
+                    font-family: Ionicons;
+                    content: '\f122';
+                    font-size: 12px;
+                    color: $theme-color--default;
+                }
+            }
+        }
+    }
+
+}
+
+
+/* project grid */
+
+
+/*-- Project Slider --*/
+.project-grid-5-column{
+    display: flex;
+    flex-wrap: wrap;
+    .project-item{
+        flex: 0 0 20%;
+        max-width: 20%;
+
+        @media #{$desktop-device}{
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        @media #{$tablet-device, $large-mobile}{
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        @media #{$extra-small-mobile}{
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+/*-- Project --*/
+.project {
+    position: relative;
+    & .image {
+        display: block;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $black;
+            opacity: 0;
+            transition: all 0.3s ease 0s;
+
+            @media #{$tablet-device, $large-mobile}{
+                left: 10px;
+                top: 10px;
+                right: 10px;
+                bottom: 10px;
+                opacity: 0.75;
+                
+            }
+        }
+        & img {
+            width: 100%;
+        }
+    }
+    & .content {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        text-align: center;
+        padding: 0 30px;
+        transition: all 0.3s ease 0s;
+        opacity: 0;
+
+        @media #{$tablet-device, $large-mobile}{
+            opacity: 1;
+        }
+        & .title {
+            font-size: 18px;
+            color: $white;
+            margin-bottom: 45px;
+            transition: all 0.3s ease 0s;
+
+            @media #{$tablet-device, $large-mobile}{
+                margin-bottom: 5px;
+            }
+            & a {
+                &:hover{
+                    color: $theme-color--default;
+                }
+            }
+        }
+        & .category {
+            transition: all 0.3s ease 0s;
+            & a {
+                color: $white;
+                margin-right: 5px;
+                font-size: 13px;
+                &::after {
+                    content: ',';
+                }
+                &:last-child {
+                    margin-right: 0;
+                    &::after {
+                        display: none;
+                    }
+                }
+                &:hover {
+                    color: $theme-color--default;
+                }
+            }
+        }
+    }
+    &:hover {
+        & .image {
+            &::before {
+                left: 10px;
+                top: 10px;
+                right: 10px;
+                bottom: 10px;
+                opacity: 0.75;
+            }
+        }
+        & .content {
+            opacity: 1;
+            & .title {
+                margin-bottom: 5px;
+            }
+            & .category {
+                & a {
+                    color: $white;
+                    margin-right: 5px;
+                    font-size: 13px;
+                    &::after {
+                        content: ',';
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                        &::after {
+                            display: none;
+                        }
+                    }
+                    &:hover {
+                        color: $theme-color--default;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*-- Project Information --*/
+.project-information {
+    background-color: $heading-text-color;
+    padding: 30px 35px;
+    & h3 {
+        color: $white;
+        margin-bottom: 20px;
+    }
+    & ul {
+        & li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba($white, 0.1);
+            color: $white;
+            font-size: 14px;
+            &:last-child {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                border: none;
+            }
+            & strong {
+                width: 80px;
+                display: inline-flex;
+            }
+            & a {}
+        }
+    }
+}
+
+/*=====  End of project grid post  ======*/
+

@@ -26,16 +26,19 @@
 
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('threejsCanvas'), antialias: true });
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('threejsCanvas'), antialias: true, alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setClearColor(0x87CEEB);
-        // renderer.shadowMap.enabled = true;
-        // renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Set shadow type
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.xr.enabled = true;
+        renderer.xr.addEventListener('sessionstart', () => {
+            renderer.setClearColor(0x000000, 0); // Transparent background
+        });
 
-        // const geometry = new THREE.BoxGeometry();
-        // const material = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
-        // const cube = new THREE.Mesh(geometry, material);
-        // scene.add(cube);
+        renderer.xr.addEventListener('sessionend', () => {
+            renderer.setClearColor(0x87CEEB, 1); // Original color when exiting AR mode
+        });
+        document.body.appendChild(ARButton.createButton(renderer, { requiredFeatures: ["hit-test"] }));
 
         const loader = new GLTFLoader();
         var loadedModel;
@@ -43,6 +46,7 @@
             gltf.scene.scale.set(20,20,20);
             scene.add(gltf.scene);
             loadedModel = gltf.scene;
+            loadedModel.rotation.x = -Math.PI / 2;
             loadedModel.castShadow = true;
             loadedModel.receiveShadow = true;
 
@@ -123,12 +127,6 @@
                     child.material = shaderMaterial; // Assign the shader material
                 }
             });
-
-            loadedModel.traverse((child) => {
-                if (child.isMesh) {
-                    child.material = matteWhiteMaterial; // Assign matte white material to each mesh
-                }
-            });
            
         }, undefined, function(error){
             console.error(error);
@@ -140,9 +138,6 @@
         scene.add(light);
 
 
-
-
-        // Add ambient light for overall illumination
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); 
         scene.add(ambientLight);
         
@@ -160,31 +155,74 @@
             keys[event.key] = false;
         });
 
-        
-
-        function animate() {
-            requestAnimationFrame(animate);
-
-            light.position.copy(camera.position); 
-            const moveSpeed = 0.1;
-            if (keys['w']) {
-                camera.position.z -= moveSpeed; // Move forward
-            }
-            if (keys['s']) {
-                camera.position.z += moveSpeed; // Move backward
-            }
-            if (keys['a']) {
-                camera.position.x -= moveSpeed; // Move left
-            }
-            if (keys['d']) {
-                camera.position.x += moveSpeed; // Move right
+        let hitTestSourceRequested = null;
+        let hitTestSource = null;
+        renderer.setAnimationLoop(() => {
+            if (!hitTestSourceRequested && renderer.xr.getSession()) {
+                const session = renderer.xr.getSession();
+                session.requestReferenceSpace('viewer').then((referenceSpace) => {
+                    session.requestHitTestSource({ space: referenceSpace }).then((source) => {
+                        hitTestSource = source;
+                    });
+                });
+                session.addEventListener('end', () => {
+                    hitTestSourceRequested = false;
+                    hitTestSource = null;
+                });
+                hitTestSourceRequested = true;
             }
 
-        
+            // Call AR frame updates
+            onARFrame();
+
+            // Ensure the light follows the camera position
+            light.position.copy(camera.position);
+
+            // Model rotation controls based on key input
+            if (loadedModel) {
+                const moveSpeed = 0.02;
+                if (keys['w']) loadedModel.rotation.x -= moveSpeed;
+                if (keys['s']) loadedModel.rotation.x += moveSpeed;
+                if (keys['a']) loadedModel.rotation.z -= moveSpeed;
+                if (keys['d']) loadedModel.rotation.z += moveSpeed;
+                if (keys['q']) loadedModel.rotation.y -= moveSpeed;
+                if (keys['e']) loadedModel.rotation.y += moveSpeed;
+            }
+
+            // Update controls and render the scene
             controls.update();
             renderer.render(scene, camera);
+        });
+
+        function onARFrame() {
+            if (!hitTestSource || (loadedModel && loadedModel.userData.placed)) return; // Skip if no hit test or model already placed
+
+            const session = renderer.xr.getSession();
+            if (session) {
+                const frame = renderer.xr.getFrame();
+                const referenceSpace = renderer.xr.getReferenceSpace();
+                const hitTestResults = frame.getHitTestResults(hitTestSource);
+                
+                if (hitTestResults.length > 0) {
+                    const hit = hitTestResults[0];
+                    const hitPose = hit.getPose(referenceSpace);
+
+                    // Place the model at the hit-test result position
+                    if (loadedModel) {
+                        loadedModel.position.set(
+                            hitPose.transform.position.x,
+                            hitPose.transform.position.y,
+                            hitPose.transform.position.z
+                        );
+                        loadedModel.visible = true;
+                    }
+                } else {
+                    // Hide the model if no hit-test result is available
+                    if (loadedModel) loadedModel.visible = false;
+                }
+            }
         }
-        animate();
+
 
         window.addEventListener('resize', () => {
             const width = window.innerWidth;
@@ -192,6 +230,13 @@
             renderer.setSize(width, height);
             camera.aspect = width / height;
             camera.updateProjectionMatrix();
+        });
+
+        document.body.addEventListener('click', () => {
+            if (hitTestSource && loadedModel) {
+                loadedModel.userData.placed = true; // Mark model as placed
+                hitTestSourceRequested = false; // Stop further hit tests
+            }
         });
     </script>
 </body>

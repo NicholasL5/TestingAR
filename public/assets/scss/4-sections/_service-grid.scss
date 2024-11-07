@@ -1,0 +1,143 @@
+
+/*=============================================
+=            service grid            =
+=============================================*/
+
+.service-grid-wrapper{
+    margin-bottom: -30px;
+}
+
+/*-- Service --*/
+.service {
+    & .service-inner {
+        text-align: center;
+        padding: 70px 40px;
+        border: 1px solid #eeeeee;
+        transition: all 0.3s ease 0s;
+        // Responsive
+        @media #{$tablet-device}{
+            padding: 60px 30px;
+        }
+        @media #{$extra-small-mobile}{
+            padding: 60px 30px;
+        }
+        &:hover {
+            border-color: transparent;
+            box-shadow: 0 10px 30px rgba($black, 0.05);
+        }
+        & .icon {
+            margin-bottom: 30px;
+           
+        }
+        & .content {
+            & h3 {
+                font-size: 24px;
+                margin-bottom: 25px;
+                font-weight: 600;
+            }
+           
+            & .read-more {
+                color: $heading-text-color;
+                display: inline-flex;
+                text-transform: capitalize;
+                font-weight: 600;
+                position: relative;
+                z-index: 1;
+                line-height: 20px;
+                &::before {
+                    content: "";
+                    height: 6px;
+                    width: 0;
+                    position: absolute;
+                    left: 0;
+                    bottom: 2px;
+                    background-color: $theme-color--default;
+                    z-index: -1;
+                    transition: all 0.3s ease 0s;
+                }
+                &:hover {
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    // Service Two
+    &.service-two {
+        & .service-inner {
+            padding: 0;
+            border: 1px solid #eeeeee;
+            &:hover {
+                border-color: transparent;
+                box-shadow: 0 10px 30px rgba($black, 0.05);
+            }
+            & .icon {
+                max-width: 80px;
+                height: 80px;
+                margin: auto;
+                margin-top: -40px;
+                margin-bottom: 25px;
+                background-color: $white;
+                padding: 10px;
+                position: relative;
+                border-radius: 50%;
+                z-index: 9;
+                box-shadow: 0 0 5px rgba($black, 0.15);
+                text-align: center;
+                & img {
+                    max-width: 100%;
+                    margin: auto;
+                }
+
+                i{
+                    font-size: 35px;
+                    line-height: 60px;
+                    color: $theme-color--default;
+                }
+            }
+            & .content {
+                padding: 0 30px 30px;
+                & h3 {
+                    font-size: 24px;
+                    margin-bottom: 25px;
+                    font-weight: 600;
+                    a{
+                        &:hover{
+                            color: $theme-color--default;
+                        }
+                    }
+                }
+                & p {}
+                & .read-more {
+                    color: $heading-text-color;
+                    display: inline-flex;
+                    text-transform: capitalize;
+                    font-weight: 600;
+                    position: relative;
+                    z-index: 1;
+                    line-height: 20px;
+                    &::before {
+                        content: "";
+                        height: 6px;
+                        width: 0;
+                        position: absolute;
+                        left: 0;
+                        bottom: 2px;
+                        background-color: $theme-color--default;
+                        z-index: -1;
+                        transition: all 0.3s ease 0s;
+                    }
+                    &:hover {
+                        &::before {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=====  End of service grid  ======*/
+

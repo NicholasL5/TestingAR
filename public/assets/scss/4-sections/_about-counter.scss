@@ -1,0 +1,82 @@
+
+/*=============================================
+=            about counter            =
+=============================================*/
+
+.about-content-row__content{
+    .title{
+        margin-top: -5px;
+    }
+}
+
+.about-counter-header-wrapper{
+    .section-title-area{
+        @media #{$tablet-device, $large-mobile}{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.about-counter-content{
+    &__area{
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &__image{
+        @media #{$large-mobile}{
+            margin-bottom: 30px;
+        }
+    }
+    &__content{
+        .title{
+            @include font-size(20px);
+            margin-bottom: 25px;
+
+            &--black3{
+                color: $theme-color--black3;
+            }
+        }
+    }
+}
+
+.single-counter{
+
+    &__number{
+        margin-bottom: 20px;
+        @include font-size(80px);
+        font-weight: 700;
+        line-height: 1;
+        color: $theme-color--default;
+        .number{
+            margin-bottom: 20px;
+            @include font-size(80px);
+            font-weight: 700;
+            line-height: 1;
+        }
+        .number-suffix{
+            font-size: 26px;
+            font-weight: 700;
+            vertical-align: top;
+            position: relative;
+            left: -15px;
+
+            @media #{$extra-small-mobile}{
+                left: 0;
+            }
+        }
+    }
+    &__text{
+        @include font-size(18px);
+        margin-bottom: 0;
+        @media #{$extra-small-mobile}{
+            font-size: 16px;
+        }
+
+        &--black3{
+            color: $theme-color--black3;
+        }
+    }   
+}
+
+/*=====  End of about counter  ======*/
+

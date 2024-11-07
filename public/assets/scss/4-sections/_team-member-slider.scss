@@ -1,0 +1,102 @@
+
+/*=============================================
+=            team member slider            =
+=============================================*/
+
+.team-slider{
+    position: relative;
+
+    .ht-swiper-button{
+        &-prev{
+            left: -100px;
+
+            @media #{$laptop-device, $desktop-device, $tablet-device}{
+                left: 50px;
+            }
+
+            @media #{$large-mobile}{
+                left: 30px;
+            }
+        }
+
+        &-next{
+            right: -100px;
+            @media #{$laptop-device, $desktop-device, $tablet-device}{
+                right: 50px;
+            }
+
+            @media #{$large-mobile}{
+                right: 30px;
+            }
+            
+        }
+    }
+
+    &__single{
+        padding-bottom: 100px;
+        margin-bottom: 30px;
+        background-color: $white;
+        position: relative;
+        transition: $transition--cubic;
+        &:hover{
+            box-shadow: 0 10px 20px rgba(0,0,0,.09);
+            .content{
+                transform: translateY(0);
+                .social-links{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+        .image{
+            img{
+                width: 100%;
+            }
+        }
+
+        .content{
+            padding: 25px 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            transform: translateY(46px);
+            transition: $transition--cubic;
+            background-color: $white;
+
+            .social-links{
+                visibility: hidden;
+                opacity: 0;
+                margin-top: 20px;
+                padding: 0 20px;
+                transition: $transition--cubic;
+            }
+
+            .identity-wrapper{
+                &.has-border-left{
+                    border-left: 3px solid $theme-color--default;
+                    padding-left: 18px;
+                    padding-top: 2px;
+                }
+
+                .name{
+                    @include font-size(20px);
+                    line-height: 1.2;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.team-member-slider-area{
+    @media #{$tablet-device}{
+        padding-bottom: 30px;
+    }
+    @media #{$large-mobile}{
+        padding-bottom: 5px;
+    }
+}
+
+/*=====  End of team member slider  ======*/
+

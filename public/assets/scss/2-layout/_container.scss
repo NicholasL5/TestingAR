@@ -1,0 +1,50 @@
+
+/*=============================================
+=            container            =
+=============================================*/
+
+.container-fluid{
+    &--cp-60{
+        padding: 0 60px;
+    }
+    &--cp-80{
+        padding: 0 80px;
+    }
+}
+
+.page-content-double-sidebar{
+    @media (min-width: 1200px){
+        .container {
+            max-width: 1600px;
+        }
+    }
+}
+
+@media (max-width: 1919px){
+    .container-fluid{
+        &--cp-60{
+            padding: 0 30px;
+        }
+        &--cp-80{
+            padding: 0 40px;
+            @media #{$large-mobile}{
+                padding: 0 30px;
+            }
+
+            @media #{$small-mobile}{
+                padding: 0 15px;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1200px){
+    .container {
+        max-width: 1200px;
+    }
+}
+
+
+/*=====  End of container  ======*/
+

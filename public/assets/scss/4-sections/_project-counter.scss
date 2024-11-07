@@ -1,0 +1,131 @@
+
+/*=============================================
+=            project counter            =
+=============================================*/
+
+.project-counter-wrapper{
+  display: flex;
+
+  @media #{$desktop-device, $tablet-device, $large-mobile}{
+      flex-direction: column;
+  }
+
+}
+
+.project-counter-bg{
+    background-size: cover;
+    background-position: center center;
+    flex-basis: 50%;
+
+    @media #{$desktop-device}{
+        padding: 200px 0;
+        flex-basis: 100%;
+    }
+
+    @media #{$tablet-device}{
+        padding: 200px 0;
+        flex-basis: 100%;
+    }
+
+    @media #{$large-mobile}{
+        padding: 200px 0;
+        flex-basis: 100%;
+    }
+}
+
+.project-counter-single-content{
+    margin-bottom: 30px;
+    &__image{
+        margin-bottom: 40px;
+    }
+
+
+    &__project-count{
+            @include font-size(60px);
+            line-height: 1;
+            color: $theme-color--default;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 20px;
+    }
+
+    &__project-title{
+        @include font-size(20px);
+        line-height: 1.5;
+        margin-bottom: 15px;
+        color: $white;
+    }
+
+    &--style2{
+        .project-counter-single-content__image{
+            margin-bottom: 30px;
+            @media #{$tablet-device, $large-mobile}{
+                margin-bottom: 15px;
+            }
+        }
+        .project-counter-single-content__project-title{
+            color: $theme-color--black;
+        }
+    }
+
+}
+
+.project-counter-content{
+    padding: 120px 150px;
+    background-color: $theme-color--black;
+    flex-basis: 50%;
+
+    @media #{$laptop-device}{
+        padding: 120px 100px;
+    }
+
+    @media #{$desktop-device}{
+        padding: 100px 30px;
+    }
+
+    @media #{$tablet-device}{
+        padding: 80px 30px;
+    }
+
+    @media #{$large-mobile}{
+        padding: 60px 30px;
+    }
+
+  
+}
+
+.project-counter-single-content-wrapper{
+    margin-bottom: -30px;
+}
+
+.counter-brand-logo-area-bg{
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.project-counter-two-area-bg{
+    background-color: $theme-color--default;
+}
+
+.project-counter-two-wrapper{
+    margin-bottom: -30px;
+}
+
+.project-counter-two-single{
+    margin-bottom: 30px;
+    &__number{
+        @include font-size(44px);
+        line-height: 1;
+        color: $white;
+        margin-bottom: 20px;
+    }
+
+    &__text{
+        @include font-size(16px);
+        line-height: 1.5;
+        font-weight: 500;
+        color: rgba(255,255,255,0.52);
+    }
+}
+
+/*=====  End of project counter  ======*/

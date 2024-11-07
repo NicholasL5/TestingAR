@@ -1,0 +1,73 @@
+
+/*=============================================
+=            icon info            =
+=============================================*/
+
+.icon-info-wrapper{
+    margin-bottom: -30px;
+}
+
+.single-icon-info{
+    margin-bottom: 30px;
+    display: flex;
+    @media #{$tablet-device, $large-mobile}{
+        justify-content: center;
+    }
+    &__image{
+        flex-basis: 100px;
+    }
+    &__content{
+        flex-basis: calc(100% - 100px);
+        margin-left: 20px;
+
+        @media #{$tablet-device}{
+            flex-basis: calc(50% - 100px);
+        }
+
+        @media #{$large-mobile}{
+            flex-basis: calc(70% - 100px);
+        }
+
+        @media #{$small-mobile}{
+            flex-basis: calc(70% - 100px);
+        }
+
+        @media #{$extra-small-mobile}{
+            flex-basis: calc(100% - 100px);
+        }
+    }
+    &__title{
+        @include font-size(18px);
+        line-height: 1.2;
+        margin-bottom: 15px;
+        &--black2{
+            color: $theme-color--black2;
+        }
+        &--black3{
+            color: $theme-color--black3;
+        }
+    }
+    &__text{
+        &:last-child{
+            margin-bottom: -5px;
+        }
+    }
+
+    &:hover{
+        .single-icon-info{
+            &__image{
+                animation: box-image-pop .3s linear;
+            }
+        }
+    }
+}
+
+
+@keyframes box-image-pop{
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+/*=====  End of icon info  ======*/
+

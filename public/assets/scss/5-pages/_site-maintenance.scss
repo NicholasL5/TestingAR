@@ -1,0 +1,82 @@
+
+/*=============================================
+=            site maintenance            =
+=============================================*/
+
+.maintenance-section {
+  position: relative;
+  z-index: 9;
+
+  display: flex;
+  align-items: center;
+
+  height: 100vh;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  &:before {
+    position: absolute;
+    z-index: 1;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+
+    content: "";
+
+    opacity: 0.9;
+    background-color: #111111;
+  }
+}
+
+.site-maintenance {
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    margin-bottom: 10px;
+
+    text-align: center;
+
+    color: $theme-color--default;
+
+    @media #{$large-mobile} {
+      font-size: 30px;
+    }
+  }
+
+  h1 {
+    font-size: 58px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    margin-bottom: 60px;
+
+    text-align: center;
+
+    color: $white;
+
+    @media #{$large-mobile} {
+      font-size: 45px;
+    }
+  }
+  p {
+    line-height: 1.5;
+
+    width: 555px;
+    max-width: 100%;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 35px;
+
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+/*=====  End of site maintenance  ======*/
+

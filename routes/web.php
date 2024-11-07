@@ -15,4 +15,5 @@ use App\Http\Controllers\ThreejsController;
 */
 
 
-Route::get('/', [ThreejsController::class, 'show']);
+Route::get('/AR', [ThreejsController::class, 'showAR']);
+Route::get('/', [ThreejsController::class, 'index']);

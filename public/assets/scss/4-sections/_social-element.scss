@@ -1,0 +1,254 @@
+
+/*=============================================
+=            social element            =
+=============================================*/
+
+.twitter-feed-slider{
+    &__area{
+        background-color: #38a1f2;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 100%;
+        height: 100%;
+        min-height: 400px;
+
+        @media #{$tablet-device}{
+            min-height: 370px;
+        }
+
+        @media #{$large-mobile}{
+            min-height: 370px;
+        }
+
+        &--style2{
+            height: 370px;
+        }
+    }
+    &__container-area{
+        position: relative;
+        height: 100%;
+        .ht-swiper-button{
+            &-nav{
+                position: absolute;
+                display: inline-block;
+                bottom: 20px;
+                top: auto;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                border: 0;
+                color: $white;
+                &:hover{
+                    background: none;
+                }
+            }
+            &-prev{
+                left: 40px;
+            }
+            &-next{
+                left: 80px;
+                &:before{
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    margin-top: -10px;
+                    content: '';
+                    display: inline-block;
+                    width: 1px;
+                    height: 20px;
+                    background-color: rgba(255,255,255,.6);
+                }
+            }
+        }
+
+        .twitter-icon{
+            position: absolute;
+            bottom: 40px;
+            right: 30px;
+            font-size: 40px;
+            line-height: 1;
+            color: $white;
+        }
+
+        &--style2{
+            .ht-swiper-button{
+               
+                &-prev{
+                    left: 40px;
+                    @media #{$tablet-device, $large-mobile}{
+                        left: 15px;
+                    }
+
+                    @media #{$small-mobile}{
+                        left: 0;
+                    }
+                }
+                &-next{
+                    left: 80px;
+                    @media #{$tablet-device, $large-mobile}{
+                        left: 55px;
+                    }
+
+                    @media #{$small-mobile}{
+                        left: 40px;
+                    }
+                }
+            }
+        }
+    }
+    
+  
+    &__container{
+        height: 100%;
+    }
+
+    &__single{
+        position: relative;
+        .tweet{
+            &-date{
+                text-transform: uppercase;
+                @include font-size(14px);
+                font-weight: 700;
+                color: rgba(255,255,255,.7);
+                position: absolute;
+                left: 40px;
+                top: 40px;
+            }
+
+            &-text{
+                position: absolute;
+                left: 0;
+                padding: 0 40px;
+                top: 50%;
+                transform: translateY(-50%);
+                @include font-size(22px);
+                line-height: 1.8;
+                color: $white;
+                font-style: italic;
+                font-weight: 700;
+                a{
+                    color: $white;
+                }
+            }
+        }
+
+        &--style2{
+            .tweet{
+                &-date{
+                    left: 40px;
+                    top: 40px;
+
+                    @media #{$tablet-device}{
+                        left: 30px;
+                        top: 30px;
+                    }
+                    @media #{$large-mobile}{
+                        left: 30px;
+                        top: 30px;
+                    }
+                    @media #{$small-mobile}{
+                        left: 15px;
+                        top: 15px;
+                    }
+                }
+    
+                &-text{
+                    padding: 0 40px;
+                    @media #{$tablet-device}{
+                        padding: 0 30px;
+                    }
+                    @media #{$large-mobile}{
+                        padding: 0 30px;
+                    }
+                    @media #{$small-mobile}{
+                        padding: 0 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.twitter-block{
+    padding: 30px;
+    background-color: $white;
+    border: 1px solid #eee;
+    min-height: 290px;
+    order: 5;
+    margin-left: -1px;
+
+
+    &__logo{
+        color: $white;
+        background-color: #38a1f2;
+        position: relative;
+        &:before{
+            display: block;
+            width: 144px;
+            height: 144px;
+            text-align: center;
+            line-height: 144px;
+            position: absolute;
+            top: calc(50% - 26px);
+            left: 50%;
+            content: '\f243';
+            font-family: 'Ionicons';
+            @include font-size(60px);
+            color: $white;
+            background-image: url('../img/patterns/4.png');
+            transform: translate(-50%,-50%);
+        }
+
+        span{
+            @include font-size(16px);
+            font-weight: 500;
+            line-height: 1;
+            color: $white;
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 40px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            a{
+                color: $white;
+                text-transform: capitalize;
+                padding-bottom: 5px;
+                border-bottom: 1px solid transparent;
+                transition: $transition--cubic;
+                &:hover{
+                    border-bottom-color: $white;
+                }
+            }
+        }
+    }
+
+    &__status{
+        
+        @media #{$tablet-device, $large-mobile}{
+            min-height: 0;
+        }
+        .tweet{
+            &-date{
+                color: #999;
+                margin-bottom: 30px;
+            }
+            &-text{
+                @include font-size(15px);
+                line-height: 1.3;
+                color: $theme-color--black;
+                a{
+                    font-weight: 700;
+                    transition: $transition--cubic;
+                    &:hover{
+                        color: $theme-color--default;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=====  End of social element  ======*/
+
